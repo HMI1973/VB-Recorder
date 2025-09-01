@@ -1,0 +1,35 @@
+﻿SET|CAPSON
+SET|NUMOFF
+SET|LANGAR
+SET|Date dd/MM/yyy
+CHECKWIN|Notepad|2000
+//Type with enter at end and type with no enter at end
+TYPE|Notepad screen, type with enter|2000
+ENDCHECK
+CHECKWINCHANGED|Notepad|2000
+//Type with enter at end and type with no enter at end
+TYPENE|Notepad screen changed, Type without enter|2000
+ENDCHECK
+CHECKIMG|{APP}\Data\SCH_01.png|2000
+ENDCHECK
+//Use {*Window Title}: to wait xxx "AFTER" active window title be "WindowsName",* make it wait till handler inside changes
+KEY_PRESS|{SHIFT}+h|100{*WindowName}
+TYPE|mydate {TAB} from {CDATE} to {CDATE+7D} ,sigh{BAK}|2000
+TYPE|Paths "{DOWNLOAD}","{DOCUMENT}","{MYPICTURE}","{MYMUSIC}","{MYVIDEO}","{APP}"|200
+TYPE|Paths "{USER}","{DESKTOP}","{WINDOWS}","{PROGRAMFILES}","{PROGRAMFILES86}","{TEMP}"|200
+TYPENE|text without Enter|200
+SET|LANGEN
+SET|CAPSOFF
+MOVE|900,800|5000
+MOVE&CLICK|925,875|5000
+MOVEREL|900,800|5000
+DRAG|940,800|1000
+DRAGREL|200,0|1000
+KEY_PRESS|{CTRL}+c|100
+CHECKCLIP|fin.l
+JUMP|21
+ENDCHECK
+//Get the commands from URL and run it then wait ms
+RUNURL|http://localhost/r.txt|2000
+RCLICK
+CLICK
